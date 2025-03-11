@@ -1,0 +1,29 @@
+{
+	"name": "PWA Shopping List",
+	"short_name": "PWAShop",
+	"description": "Progressive Web App with SvelteKit.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#000000",
+	"icons": [
+		{
+			"src": "/icons/icon1.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "/screenshots/screenshot-wide.png",
+			"sizes": "1920x1080",
+			"type": "image/png",
+			"form_factor": "wide"
+		},
+		{
+			"src": "/screenshots/screenshot1.png",
+			"sizes": "1080x1920",
+			"type": "image/png"
+		}
+	]
+}

@@ -1,42 +1,48 @@
-# LowSheets - SvelteKit reference skeleton
+# Shopping App
 
-## Variables
+## Description
+PWA Shopping List is a Progressive Web App (PWA) built with SvelteKit. It allows users to create and manage their shopping lists efficiently, even while offline. The application leverages service workers and caching strategies to provide a seamless experience.
 
-- `$lowsheets-appname$`: The name of the application
+## PWA Functionality
+This application is configured as a PWA:
+- `manifest.json` defines the PWA metadata.
+- `service-worker.js` handles caching and offline capabilities.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## To test PWA functionality:
+1. Run the app locally.
+2. Open DevTools (F12) and go to **Application** > **Manifest**.
+3. Install the app via the browser's install prompt.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+## Project Structure
+```
+/
+├── src/
+│   ├── lib/                       # Reusable components
+│       ├── db.ts                  # Database or storage logic
+│   ├── routes/                    # SvelteKit routes
+│       ├── edit-shopping-list/
+│           ├── +page.svelte       # Main UI page
+│           ├── +page.server.ts    # Server-side logic (if applicable)
+├── static/                        # Static assets
+│   ├── service-worker.js          # Service worker for caching
+│   ├── manifest.json              # PWA manifest file
+├── package.json                   # Project dependencies
+├── README.md                      # This file
 ```
 
-## Developing
+## Explanation of Key Files
+### `db.ts`
+This file manages the database logic for the shopping list. It handles data storage and retrieval, enabling users to persist their shopping lists across sessions. Depending on the implementation, it may use local storage, IndexedDB, or a remote database.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### `+page.svelte`
+This is the main UI page of the application, responsible for displaying the shopping list interface. It contains the frontend logic and user interactions, such as adding, removing, and updating items in the shopping list.
 
-```bash
-npm run dev
+### `+page.server.ts`
+This file contains the server-side logic for handling requests related to the shopping list. It may process API calls, handle authentication, or interact with a database to fetch and update data.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Author
+Developed by **Ángel Sáez**. Contributions are welcome!
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Acknowledgments
+- [SvelteKit](https://kit.svelte.dev/)
+- [PWA Documentation](https://web.dev/progressive-web-apps/)
